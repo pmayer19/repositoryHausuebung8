@@ -95,8 +95,9 @@ public class TimeUtilPro
     }
       
     public static LocalDateTime dateToLocalDateTime(Date dateTime) {
-        LocalDateTime a = LocalDateTime.ofInstant(dateTime.toInstant(), ZoneId.systemDefault());
-        return a;
+        LocalDate a = LocalDate.ofInstant(dateTime.toInstant(), ZoneId.systemDefault());
+        LocalDateTime ret = a.atTime(dateTime.getHours(), dateTime.getMinutes());
+        return ret;
     }
     
     public static LocalDateTime calendarToLocalDateTime(Calendar dateTime) {
@@ -152,8 +153,8 @@ public class TimeUtilPro
     @SuppressWarnings("deprecation")
     public static Date localDateToDate(LocalDate date) {
         Date d = new Date();
-        d.setYear(date.getYear()-1900);
-        d.setMonth(date.getMonth().getValue()-1);
+        d.setYear(date.getYear());
+        d.setMonth(date.getMonth().getValue());
         d.setDate(date.getDayOfMonth());
         return d;
     }
@@ -161,8 +162,8 @@ public class TimeUtilPro
     @SuppressWarnings("deprecation")
     public static Date localDateTimeToDate(LocalDateTime dateTime) {
         Date d = new Date();
-        d.setYear(dateTime.getYear()-1900);
-        d.setMonth(dateTime.getMonth().getValue()-1);
+        d.setYear(dateTime.getYear());
+        d.setMonth(dateTime.getMonth().getValue());
         d.setDate(dateTime.getDayOfMonth());
         d.setHours(dateTime.getHour());
         d.setMinutes(d.getMinutes());
@@ -172,12 +173,12 @@ public class TimeUtilPro
     // ########## CALENDAR METHODS ##########
     
     public static Calendar localDateToCalendar(LocalDate date) {
-        Calendar c = new GregorianCalendar(date.getYear(), date.getMonth().getValue()-1, date.getDayOfMonth());
+        Calendar c = new GregorianCalendar(date.getYear(), date.getMonth().getValue(), date.getDayOfMonth());
         return c;
     }
 
     public static Calendar localDateTimeToCalendar(LocalDateTime dateTime) {
-        Calendar c = new GregorianCalendar(dateTime.getYear(), dateTime.getMonth().getValue()-1, dateTime.getDayOfMonth(), dateTime.getHour(), dateTime.getMinute());
+        Calendar c = new GregorianCalendar(dateTime.getYear(), dateTime.getMonth().getValue(), dateTime.getDayOfMonth(), dateTime.getHour(), dateTime.getMinute());
         return c;
     }
 
