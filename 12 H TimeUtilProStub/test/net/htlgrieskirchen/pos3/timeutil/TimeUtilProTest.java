@@ -73,10 +73,10 @@ public class TimeUtilProTest {
     public void testDateToLocalDate() {
         System.out.println("dateToLocalDate");
         Date dateTime = new Date();
-        dateTime.setYear(2003-1900);
-        dateTime.setMonth(02-1);
+        dateTime.setYear(2004-1900);
+        dateTime.setMonth(04-1);
         dateTime.setDate(01);
-        LocalDate expResult = LocalDate.of(2003,02,01);
+        LocalDate expResult = LocalDate.of(2004,04,01);
         LocalDate result = TimeUtilPro.dateToLocalDate(dateTime);
         assertEquals(expResult, result);
     }
