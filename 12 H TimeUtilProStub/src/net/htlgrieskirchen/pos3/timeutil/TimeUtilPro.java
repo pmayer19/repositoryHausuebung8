@@ -166,7 +166,7 @@ public class TimeUtilPro
         d.setMonth(dateTime.getMonth().getValue());
         d.setDate(dateTime.getDayOfMonth());
         d.setHours(dateTime.getHour());
-        d.setMinutes(d.getMinutes());
+        d.setMinutes(dateTime.getMinute());
         return d;
     }
 

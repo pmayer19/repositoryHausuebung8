@@ -73,8 +73,8 @@ public class TimeUtilProTest {
     public void testDateToLocalDate() {
         System.out.println("dateToLocalDate");
         Date dateTime = new Date();
-        dateTime.setYear(103);
-        dateTime.setMonth(01);
+        dateTime.setYear(2003-1900);
+        dateTime.setMonth(02-1);
         dateTime.setDate(01);
         LocalDate expResult = LocalDate.of(2003,02,01);
         LocalDate result = TimeUtilPro.dateToLocalDate(dateTime);
@@ -125,8 +125,8 @@ public class TimeUtilProTest {
     public void testDateToLocalDateTime() {
         System.out.println("dateToLocalDateTime");
         Date dateTime = new Date();
-        dateTime.setYear(103);
-        dateTime.setMonth(01);
+        dateTime.setYear(2003-1900);
+        dateTime.setMonth(02-1);
         dateTime.setDate(01);
         dateTime.setHours(12);
         dateTime.setMinutes(34);
@@ -203,8 +203,8 @@ public class TimeUtilProTest {
         System.out.println("localDateToDate");
         LocalDate date = LocalDate.of(2003, 02, 01);
         Date expResult = new Date();
-        expResult.setYear(103);
-        expResult.setMonth(01);
+        expResult.setYear(2003);
+        expResult.setMonth(02);
         expResult.setDate(01);
         Date result = TimeUtilPro.localDateToDate(date);
         assertEquals(expResult, result);
@@ -218,8 +218,8 @@ public class TimeUtilProTest {
         System.out.println("localDateTimeToDate");
         LocalDateTime dateTime = LocalDateTime.of(2003, 02, 01, 12, 34);
         Date expResult = new Date();
-        expResult.setYear(103);
-        expResult.setMonth(01);
+        expResult.setYear(2003);
+        expResult.setMonth(02);
         expResult.setDate(01);
         expResult.setHours(12);
         expResult.setMinutes(34);
